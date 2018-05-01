@@ -38,7 +38,7 @@ def mail():
 		#sending
 		server=smtplib.SMTP_SSL("smtp.qq.com", 465)  
 		server.login(my_sender, my_pass)  
-		server.sendmail(my_sender,[my_user,],msg.as_string())  
+		server.sendmail(my_sender,[my_receiver,],msg.as_string())  
 		server.quit()
 		
 	except Exception:  
