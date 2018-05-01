@@ -10,14 +10,14 @@ import sys
  
 my_sender='xxxxxxxx'    
 my_pass = 'xxxxxxxx'             
-my_user='xxxxxxxx'      
+my_receiver='xxxxxxxx'      
 filename="log."+sys.argv[1]+".out"
 def mail():
 	ret=True
 	try:
 		msg=MIMEMultipart()
 		msg['From']=formataddr(["FromWhom",my_sender])  
-		msg['To']=formataddr(["ToWhom",my_user])              
+		msg['To']=formataddr(["ToWhom",my_receiver])              
 		msg['Subject']="Training finished"
 		msg.attach(MIMEText('Training finished','plain','utf-8'))
 		att1 = MIMEText(open(filename, 'rb').read(), 'base64', 'utf-8')
